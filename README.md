@@ -1,1 +1,1 @@
-My personal dotfiles. Config for zsh (plugins + powerlevel10k theme) and Alacritty terminal config.
+My personal dotfiles. Zsh (plugins + powerlevel10k theme) and Alacritty terminal config.
