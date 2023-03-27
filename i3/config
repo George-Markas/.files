@@ -1,5 +1,3 @@
-
-
 #	 o8o    .oooo.                                                                            .o88o.  o8o             
 #	 `"'  .dP""Y88b                                                                           888 `"  `"'             
 #	oooo        ]8P' oooo oooo    ooo ooo. .oo.  .oo.         .ooooo.   .ooooo.  ooo. .oo.   o888oo  oooo   .oooooooo 
@@ -7,8 +5,8 @@
 #	 888       `88b.   `88..]88..8'    888   888   888       888       888   888  888   888   888     888  888   888  
 #	 888  o.   .88P     `888'`888'     888   888   888       888   .o8 888   888  888   888   888     888  `88bod8P'  
 #	o888o `8bd88P'       `8'  `8'     o888o o888o o888o      `Y8bod8P' `Y8bod8P' o888o o888o o888o   o888o `8oooooo.  
-																										   d"     YD  
-																										   "Y88888P'  
+#	                                                                                                       d"     YD																									   d"     YD  
+#													       "Y88888P'												   "Y88888P'  
 
 # Catppuccin Mocha colors
 client.focused          #b4befe #b4befe #cdd6f4 #b4befe #b4befe
