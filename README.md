@@ -35,8 +35,9 @@ This repository contains configuration files for my laptop Arch Linux setup.
  ```
  *PipeWire* for sound
  ```
- sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack
+ sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber
  ```
+ Then add ```wireplumber &``` to your .xinitrc
  
  ## Preview
 ![](Preview/Preview_1.png)
