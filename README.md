@@ -37,7 +37,8 @@ This repository contains configuration files for my laptop Arch Linux setup.
  ```
  sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber
  ```
- Then add ```wireplumber &``` to your .xinitrc
+ Then add the following line to *~/.xinitrc*
+ ```wireplumber &```
  
  ## Preview
 ![](Preview/Preview_1.png)
