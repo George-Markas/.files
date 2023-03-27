@@ -8,7 +8,7 @@ This repository contains configuration files for my laptop Arch Linux setup.
 * Bar: [`Polybar`](https://github.com/polybar/polybar)
 * Prompt: [`Starship`](https://starship.rs/)
 * Compositor: [`picom`](https://github.com/yshui/picom)
-* Terminal: [`alacritty`](https://github.com/alacritty/alacritty)   
+* Terminal: [`Alacritty`](https://github.com/alacritty/alacritty)   
 * Shell: [`zsh`](https://archlinux.org/packages/extra/x86_64/zsh/)  
 * File Manager: [`PCManFM`](https://archlinux.org/packages/community/x86_64/pcmanfm/)
 * App Launcher: [`Rofi`](https://github.com/davatorium/rofi)
@@ -19,11 +19,11 @@ This repository contains configuration files for my laptop Arch Linux setup.
 
 [`Nerdfonts`](https://www.nerdfonts.com/font-downloads) (my config uses Hack and JetBrainsMono)
 
-**Font Awesome**
+* **Font Awesome**
 ```
 sudo pacman -S ttf-font-awesome
 ```
-**brightnessctl** for brightness control
+* **brightnessctl** for brightness control
 ```
 sudo pacman -S brightnessctl
 ```
