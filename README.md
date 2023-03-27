@@ -24,6 +24,8 @@ This repository contains configuration files for my laptop Arch Linux setup.
 
 * [`Nerdfonts`](https://www.nerdfonts.com/font-downloads) (my config uses Hack and JetBrainsMono)
 
+
+### Other
 * **Font Awesome**
 ```
 sudo pacman -S ttf-font-awesome
