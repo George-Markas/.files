@@ -17,7 +17,7 @@ This repository contains configuration files for my laptop Arch Linux setup.
 
 ## Additional Dependancies:
 
-### zsh plugins:
+### Plugins for zsh:
 
  [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions)
  [`zsh-vi-mode`](https://github.com/jeffreytse/zsh-vi-mode)
