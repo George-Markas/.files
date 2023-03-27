@@ -10,7 +10,7 @@ This repository contains configuration files for my laptop Arch Linux setup.
 * Compositor: [`picom`](https://github.com/yshui/picom)
 * Terminal: [`Alacritty`](https://github.com/alacritty/alacritty)   
 * Shell: [`zsh`](https://archlinux.org/packages/extra/x86_64/zsh/)
-* Editor: [`NvChad`](https://nvchad.com/)  
+* Editor: [`NvChad`](https://nvchad.com/) (with Catppuccin theme, swap to it with <leader> + th) 
 * File Manager: [`PCManFM`](https://archlinux.org/packages/community/x86_64/pcmanfm/)
 * App Launcher: [`Rofi`](https://github.com/davatorium/rofi)
 * Clipboard Manager: [`greenclip`](https://github.com/erebe/greenclip)
