@@ -50,3 +50,5 @@ This repository contains configuration files for my laptop Arch Linux setup.
 ![](Preview/Preview_1.png)
 
 ![](Preview/Preview_2.png)
+
+![](Preview/Preview_3.png)
