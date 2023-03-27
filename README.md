@@ -33,6 +33,10 @@ This repository contains configuration files for my laptop Arch Linux setup.
  ```
  sudo pacman -S brightnessctl
  ```
+ *PipeWire* for sound
+ ```
+ sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack
+ ```
  
  ## Preview
 ![](Preview/Preview_1.png)
