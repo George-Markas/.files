@@ -15,8 +15,8 @@ This repository contains configuration files for my laptop Arch Linux setup.
 * App Launcher: [`Rofi`](https://github.com/davatorium/rofi)
 * Clipboard Manager: [`greenclip`](https://github.com/erebe/greenclip)
 * Screenshot Tool: [`shotgun`](https://github.com/neXromancers/shotgun)
-* GTK Theme: [`Catppuccin Mocha`](https://github.com/catppuccin/gtk)
-* Icons: [`Papirus`](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) (w/ Maroon folder color via catppuccin/papirus-folders script)
+* GTK Theme: [`Catppuccin Mocha`](https://github.com/catppuccin/gtk) (Pink Dark)
+* Icons: [`Papirus`](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) (with Maroon folder color via [catppuccin/papirus-folders](https://github.com/catppuccin/papirus-folders))
 
 ## Additional Dependancies
 
