@@ -2,7 +2,7 @@
 
 This repository contains configuration files for my laptop Arch Linux setup.
 
-## Components:
+## Components
 
 * Window Manager: [`i3`](https://i3wm.org/)  
 * Bar: [`Polybar`](https://github.com/polybar/polybar)
@@ -15,7 +15,7 @@ This repository contains configuration files for my laptop Arch Linux setup.
 * Clipboard Manager: [`greenclip`](https://github.com/erebe/greenclip)
 * Screenshot Tool: [`shotgun`](https://github.com/neXromancers/shotgun)
 
-## Additional Dependancies:
+## Additional Dependancies
 
 ### Shell Plugins:
 
