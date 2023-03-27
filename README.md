@@ -9,11 +9,14 @@ This repository contains configuration files for my laptop Arch Linux setup.
 * Prompt: [`Starship`](https://starship.rs/)
 * Compositor: [`picom`](https://github.com/yshui/picom)
 * Terminal: [`Alacritty`](https://github.com/alacritty/alacritty)   
-* Shell: [`zsh`](https://archlinux.org/packages/extra/x86_64/zsh/)  
+* Shell: [`zsh`](https://archlinux.org/packages/extra/x86_64/zsh/)
+* Editor: [`NvChad`](https://nvchad.com/)  
 * File Manager: [`PCManFM`](https://archlinux.org/packages/community/x86_64/pcmanfm/)
 * App Launcher: [`Rofi`](https://github.com/davatorium/rofi)
 * Clipboard Manager: [`greenclip`](https://github.com/erebe/greenclip)
 * Screenshot Tool: [`shotgun`](https://github.com/neXromancers/shotgun)
+* GTK Theme: [`Catppuccin Mocha`](https://github.com/catppuccin/gtk)
+* Icons: [`Papirus`](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) (w/ Maroon folder color via catppuccin/papirus-folders script)
 
 ## Additional Dependancies
 
