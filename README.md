@@ -24,24 +24,24 @@ This repository contains configuration files for my laptop Arch Linux setup.
 * [`zsh-vi-mode`](https://github.com/jeffreytse/zsh-vi-mode)
 
 ### Other:
-* [`Nerdfonts`](https://www.nerdfonts.com/font-downloads) (my config uses Hack and JetBrainsMono)
+  [`Nerdfonts`](https://www.nerdfonts.com/font-downloads) (my config uses Hack and JetBrainsMono)
 
- *Font Awesome*
- ```
- sudo pacman -S ttf-font-awesome
- ```
- *brightnessctl* for brightness control
- ```
- sudo pacman -S brightnessctl
- ```
- *PipeWire* for sound
- ```
- sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber
- ```
- Then add the following line to **~/.xinitrc**
- ```
- wireplumber &
- ```
+  *Font Awesome*
+  ```
+  sudo pacman -S ttf-font-awesome
+  ```
+  *brightnessctl* for brightness control
+  ```
+  sudo pacman -S brightnessctl
+  ```
+  *PipeWire* for sound
+  ```
+  sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber
+  ```
+  Then add the following line to **~/.xinitrc**
+  ```
+  wireplumber &
+  ```
 
  ## Preview
 ![](Preview/Preview_1.png)
