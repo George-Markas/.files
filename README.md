@@ -33,3 +33,8 @@ This repository contains configuration files for my laptop Arch Linux setup.
  ```
  sudo pacman -S brightnessctl
  ```
+ 
+ ## Preview
+![](Preview/Preview_1.png)
+
+![](Preview/Preview_2.png)
