@@ -17,7 +17,7 @@ This repository contains configuration files for my laptop Arch Linux setup.
 
 ### Additional Dependancies:
 
-[`_Nerdfonts_`](https://www.nerdfonts.com/font-downloads) (my config uses Hack and JetBrainsMono)
+[`Nerdfonts`](https://www.nerdfonts.com/font-downloads) (my config uses Hack and JetBrainsMono)
 
 **Font Awesome**
 ```
