@@ -2,7 +2,7 @@
 
 This repository contains configuration files for my laptop Arch Linux setup.
 
-# Components:
+## Components:
 
 * Window Manager: [`i3`](https://i3wm.org/)  
 * Bar: [`Polybar`](https://github.com/polybar/polybar)
