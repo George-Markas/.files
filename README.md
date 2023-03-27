@@ -26,15 +26,15 @@ This repository contains configuration files for my laptop Arch Linux setup.
 ### Other:
 * [`Nerdfonts`](https://www.nerdfonts.com/font-downloads) (my config uses Hack and JetBrainsMono)
 
-* *Font Awesome*
+ *Font Awesome*
  ```
  sudo pacman -S ttf-font-awesome
  ```
- * *brightnessctl* for brightness control
+ *brightnessctl* for brightness control
  ```
  sudo pacman -S brightnessctl
  ```
- * *PipeWire* for sound
+ *PipeWire* for sound
  ```
  sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber
  ```
