@@ -15,7 +15,12 @@ This repository contains configuration files for my laptop Arch Linux setup.
 * Clipboard Manager: [`greenclip`](https://github.com/erebe/greenclip)
 * Screenshot Tool: [`shotgun`](https://github.com/neXromancers/shotgun)
 
-### Additional Dependancies:
+## Additional Dependancies:
+
+# zsh plugins:
+
+* [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions)
+* [`zsh-vi-mode`](https://github.com/jeffreytse/zsh-vi-mode)
 
 * [`Nerdfonts`](https://www.nerdfonts.com/font-downloads) (my config uses Hack and JetBrainsMono)
 
