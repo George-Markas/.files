@@ -20,6 +20,7 @@ This repository contains configuration files for my laptop Arch Linux setup.
 ### Shell Plugins:
 
  [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions)
+ 
  [`zsh-vi-mode`](https://github.com/jeffreytse/zsh-vi-mode)
 
 ### Other:
