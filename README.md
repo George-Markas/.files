@@ -15,6 +15,7 @@ This repository contains configuration files for my laptop Arch Linux setup.
 * App Launcher: [`Rofi`](https://github.com/davatorium/rofi)
 * Clipboard Manager: [`greenclip`](https://github.com/erebe/greenclip)
 * Screenshot Tool: [`shotgun`](https://github.com/neXromancers/shotgun)
+* Audio Visualizer: [`Cava`](https://github.com/karlstav/cava)
 * GTK Theme: [`Catppuccin Mocha`](https://github.com/catppuccin/gtk) (Pink Dark)
 * Icons: [`Papirus`](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) (with Maroon folder color via [catppuccin/papirus-folders](https://github.com/catppuccin/papirus-folders))
 
@@ -44,6 +45,10 @@ This repository contains configuration files for my laptop Arch Linux setup.
   add the following line to **~/.xinitrc**
   ```
   wireplumber &
+  ```
+  *rofi-bluetooth-git* for controlling bluetooth via rofi
+  ```
+  yay -S rofi-bluetooth-git
   ```
 
  ## Preview
