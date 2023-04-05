@@ -46,6 +46,10 @@ This repository contains configuration files for my laptop Arch Linux setup.
   ```
   wireplumber &
   ```
+  **playerctl** for controlling media players
+  ```
+  sudo pacman -S playerctl
+  ```
   **rofi-bluetooth-git** for controlling bluetooth via rofi
   ```
   yay -S rofi-bluetooth-git
