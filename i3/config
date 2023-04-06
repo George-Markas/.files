@@ -1,14 +1,7 @@
-#	 o8o    .oooo.                                                                            .o88o.  o8o             
-#	 `"'  .dP""Y88b                                                                           888 `"  `"'             
-#	oooo        ]8P' oooo oooo    ooo ooo. .oo.  .oo.         .ooooo.   .ooooo.  ooo. .oo.   o888oo  oooo   .oooooooo 
-#	`888      <88b.   `88. `88.  .8'  `888P"Y88bP"Y88b       d88' `"Y8 d88' `88b `888P"Y88b   888    `888  888' `88b  
-#	 888       `88b.   `88..]88..8'    888   888   888       888       888   888  888   888   888     888  888   888  
-#	 888  o.   .88P     `888'`888'     888   888   888       888   .o8 888   888  888   888   888     888  `88bod8P'  
-#	o888o `8bd88P'       `8'  `8'     o888o o888o o888o      `Y8bod8P' `Y8bod8P' o888o o888o o888o   o888o `8oooooo.  
-#	                                                                                                       d"     YD																									   d"     YD  
-#													       "Y88888P'												   "Y88888P'  
+# Setting Super as the modifier key
+set $mod Mod4
 
-# Catppuccin Mocha colors
+# Catppuccin Mocha Theme
 client.focused          #b4befe #b4befe #cdd6f4 #b4befe #b4befe
 client.focused_inactive #5f5faf #b4befe #cdd6f4 #b4befe #5f5faf
 client.unfocused        #5f5faf #b4befe #cdd6f4 #b4befe #5f5faf
@@ -16,10 +9,7 @@ client.urgent           #f9e2af #f9e2af #cdd6f4 #f9e2af #f9e2af
 client.placeholder      #181825 #181825 #cdd6f4 #181825 #181825
 client.background       #cdd6f4
 
-# Setting Super as the modifier key
-set $mod Mod4
-
-# System font
+# Setting font
 font pango:Hack Nerd Font 10
 
 # Remove titlebars
@@ -37,23 +27,10 @@ default_border pixel 1
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-# Start polybar
-exec_always --no-startup-id sh ~/.config/polybar/launch.sh
-
-# Start picom
-exec_always --no-startup-id picom
-
-# Set wallpaper
-exec_always --no-startup-id feh --bg-scale /home/george/Pictures/Wallpapers/Wallpaper_Hike.jpg
-
 # Start greenclip daemon
 exec --no-startup-id "greenclip daemon"
 
-# Clipboard
 bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
-
-# Take screenshot and save it to clipboard
-bindsym $mod+Print exec --no-startup-id shotgun $selection - | xclip -t 'image/png' -selection clipboard
 
 # Use pactl to adjust volume.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -66,26 +43,38 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
-# Layout switching
-exec --no-startup-id setxkbmap -layout 'us,gr' -variant qwerty -option 'grp:alt_shift_toggle'
-
-# Start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
-
-# Rofi
-bindsym $mod+d exec --no-startup-id rofi -show drun
-
-# Kill focused window
-bindsym $mod+q kill
+# Take screenshot and save it to clipboard
+bindsym $mod+Print exec --no-startup-id shotgun $selection - | xclip -t 'image/png' -selection clipboard
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Keyboard layout setting / switching
+exec --no-startup-id setxkbmap -layout 'us,gr' -variant qwerty -option 'grp:alt_shift_toggle'
+
+# Start polybar
+exec_always --no-startup-id sh ~/.config/polybar/launch.sh
+
+# Set wallpaper
+exec_always feh --bg-scale /home/george/Pictures/Wallpapers/Wallpaper_Hike.jpg
+
+# Start picom
+exec_always --no-startup-id picom
+
+# Start a terminal
+bindsym $mod+Return exec --no-startup-id alacritty
+
+# Kill focused window
+bindsym $mod+q kill
+
+# rofi bind
+bindsym $mod+d exec --no-startup-id rofi -show drun
+
 # Change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
 
 # Alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -107,6 +96,9 @@ bindsym $mod+Shift+Right move right
 
 # Split in horizontal orientation
 bindsym $mod+h split h
+
+# Split in vertical orientation
+#bindsym $mod+v split v
 
 # Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
