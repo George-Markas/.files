@@ -54,6 +54,10 @@ This repository contains configuration files for my laptop Arch Linux setup.
   ```
   yay -S rofi-bluetooth-git
   ```
+  **zscroll-git** for spotify status scrolling
+  ```
+  yay -S zscroll-git
+  ```
 
  ## Preview
 ![](Preview/Preview_1.png)
