@@ -1,0 +1,5 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Prompt Format
+format = '''[󰣇](#1793d0) [$directory$git_branch$git_commit](yellow)[](green)[](red)[](blue) '''
