@@ -1,0 +1,156 @@
+// Original config taken from https://github.com/DankChoir/dotfiles, modified by George-Markas.
+
+{
+  "layer": "top",
+  "position": "top",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 35,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "temperature",
+    "cpu",
+    "memory"
+  ],
+
+  "modules-center": [
+    "hyprland/window"
+  ],
+
+  "modules-right": [
+    "network",
+    "bluetooth",
+    "hyprland/language",
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "clock",
+    "tray"
+  ],
+
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 40
+  },
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate"
+  },
+
+  "hyprland/language":{
+    "format": "{}",
+    "format-en": "en",
+    "format-gr": "gr"
+  },
+
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10
+  },
+
+  "clock": {
+    "timezone": "Europe/Athens",
+    "format": "{: %R}",
+    "tooltip-format": "{:󰃭 %d-%b-%Y}"
+  },
+
+  "backlight": {
+    // to find yours, run: ls /sys/class/backlight
+    "device": "nvidia_wmi_ec_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "tooltip": false
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": "<span font='Font Awesome 6 Free Solid'></span> {usage}%", // markup for fa-microchip glyph
+    "states": {
+      "warning": 70,
+      "critical": 90
+    }
+  },
+
+  "battery": {
+    // to find yours, run: ls /sys/class/power_supply
+    "bat": "BAT0", 
+    "interval": 5,
+    "full-at": 99,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "{icon} {capacity}%",
+    "format-icons": { 
+    "default": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+    "charging": ["󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"] 
+    }
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰸈 Muted",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" ,
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 1%+",
+    "on-scroll-down": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 1%-",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    }
+  },
+
+  "temperature": {
+    // to find yours, run: find /sys/devices  -type f -name "*_label" -exec grep -H . {} +  	  
+    "hwmon-path": ["/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon5/temp1_input"],
+    "critical-threshold": 80,
+    "interval": 5,
+    "format-critical": " temperatureC}°C",
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["","","",""],
+    "tooltip": false
+  },
+
+
+  "memory": {
+    "interval": 5,
+    "format": " {used} GiB",
+    "tooltip": false,
+    "on-click": "kitty --title btop sh -c 'btop'"
+  },
+ 
+  "network": {
+    "interval": 5,
+    "format-icons":
+    ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+    "format-wifi": "{icon} {ifname}",
+    "format-disconnected": "󰤮 Disconnected",
+    "format-ethernet": "󰈀 {ifname}",
+    "tooltip-format": "{essid}"
+    //"on-click": "rofi-wifi-menu.sh"
+  },
+
+  "bluetooth": {
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-on": "",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "rofi-bluetooth",
+    "tooltip": "false"
+  }
+}

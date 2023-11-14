@@ -1,0 +1,43 @@
+# Basic settings
+set hidden true
+set ignorecase true
+set icons true
+set ifs "\n"
+set info size
+
+# Movement
+map gh cd /home/george
+map gd cd ~/Downloads
+map gp cd ~/Pictures
+map gc cd ~/.config
+map gt cd ~/.local/share/Trash/files
+
+# Shell
+map t :shell
+
+# Image previews
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
+
+# Edit lf config
+cmd edit-config ${{
+    $EDITOR ~/.config/lf/lfrc
+    lf -remote "send $id source ~/.config/lf/lfrc"
+}}
+map C edit-config
+
+# Open file
+cmd open ${{    
+    test -L $f && f=$(readlink -f $f)    
+    case "$(file --mime-type "$f" -b)" in    
+        text/*) nvim $fx;;    
+        audio/*) mpv --audio-display=no $f ;;    
+        *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;    
+    esac    
+}}  
+
+# Trash
+cmd tr %trash-put $fx
+cmd tre %trash-empty
