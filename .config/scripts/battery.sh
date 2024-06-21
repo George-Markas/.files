@@ -13,7 +13,7 @@ GLYPH_2='󰁼'
 GLYPH_1='󰁻'
 GLYPH_0='󰁺'
 
-capacity=$(cat /sys/class/power_supply/BAT0/capacity | awk '{print $1 + 2}') # full at 98
+capacity=$(cat /sys/class/power_supply/BAT0/capacity)
 charging=$(cat /sys/class/power_supply/BAT0/status)
 ac_connected=$(cat /sys/class/power_supply/ADP0/online)
 
