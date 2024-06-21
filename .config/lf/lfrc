@@ -32,14 +32,14 @@ cmd open ${{
 
 # unzip
 cmd unarchive ${{
-  	case "$f" in
-      	*.zip) unzip "$f" ;;
-      	*.tar.gz) tar -xzvf "$f" ;;
-      	*.tar.xz) tar -xJf "$f" ;;
-      	*.tar.bz2) tar -xjvf "$f" ;;
-      	*.tar) tar -xvf "$f" ;;
-      	*.rar) unrar "$f" ;;
-      	*) echo "Unsupported format" ;;
+	case "$f" in
+		*.zip) unzip "$f" ;;
+		*.tar.gz) tar -xzvf "$f" ;;
+		*.tar.xz) tar -xJf "$f" ;;
+		*.tar.bz2) tar -xjvf "$f" ;;
+		*.tar) tar -xvf "$f" ;;
+		*.rar) unrar "$f" ;;
+		*) echo "Unsupported format" ;;
   	esac
 	clear
 }}
