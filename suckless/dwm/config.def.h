@@ -71,6 +71,8 @@ static const char *brdowncmd[] = { "brightnessctl", "set", "5%-", NULL };
 static const char *volupcmd[] = { "/bin/sh", "-c", "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+ && kill -39 $(pidof dwmblocks)", NULL };
 static const char *voldowncmd[] = { "/bin/sh", "-c", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && kill -39 $(pidof dwmblocks)", NULL };
 static const char *volmutecmd[] = { "/bin/sh", "-c", "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && kill -39 $(pidof dwmblocks)", NULL };
+static const char *scshotcmd[] = { "screenshot.sh", NULL };
+static const char *scshotselcmd[] = { "screenshot_selection.sh", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -94,14 +96,14 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+	//{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
-	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
+	//{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
+	//{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
+	//{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -114,9 +116,11 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ 0, XF86XK_MonBrightnessUp,   	spawn,     {.v = brupcmd} },
     { 0, XF86XK_MonBrightnessDown, 	spawn,     {.v = brdowncmd} },
-    { 0, XF86XK_AudioRaiseVolume, 	spawn, 	   {.v = volupcmd } } ,
-    { 0, XF86XK_AudioLowerVolume, 	spawn, 	   {.v = voldowncmd } },
+    { 0, XF86XK_AudioRaiseVolume, 	spawn, 	   {.v = volupcmd} } ,
+    { 0, XF86XK_AudioLowerVolume, 	spawn, 	   {.v = voldowncmd} },
     { 0, XF86XK_AudioMute, 			spawn, 	   {.v = volmutecmd} },
+	{ MODKEY, XK_Print,				spawn,	   {.v = scshotcmd} },
+	{ MODKEY|ShiftMask, XK_Print,	spawn,	   {.v = scshotselcmd} }
 };
 
 /* button definitions */
