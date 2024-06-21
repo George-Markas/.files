@@ -1,0 +1,58 @@
+# general settings
+set hidden true
+set ignorecase true
+set icons true
+set ifs "\n"
+set info size
+
+# movement
+map gh cd /home/george
+map gd cd ~/Downloads
+map gc cd ~/.config
+map gt cd ~/.local/share/Trash/files
+
+# shell
+map t :shell
+
+# image previews
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
+
+# open files
+cmd open ${{    
+    test -L $f && f=$(readlink -f $f)    
+    case "$(file --mime-type "$f" -b)" in    
+        text/*) $EDITOR $fx;;    
+        audio/*) $AUDIO_PLAYER --audio-display=no $f ;;    
+        *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;    
+    esac    
+}}
+
+# unzip
+cmd unarchive ${{
+  	case "$f" in
+      	*.zip) unzip "$f" ;;
+      	*.tar.gz) tar -xzvf "$f" ;;
+      	*.tar.xz) tar -xJf "$f" ;;
+      	*.tar.bz2) tar -xjvf "$f" ;;
+      	*.tar) tar -xvf "$f" ;;
+      	*.rar) unrar "$f" ;;
+      	*) echo "Unsupported format" ;;
+  	esac
+	clear
+}}
+map au unarchive
+
+# zip
+cmd zipper ${{
+  	filename=$(basename -- "$f")
+  	zipName="${filename%.*}.zip"
+  	zip -r "$zipName" "$filename"
+}}
+map az zipper
+
+# trash
+cmd tr %trash-put $fx
+cmd tre %trash-empty
