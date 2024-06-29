@@ -66,11 +66,22 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
+
+/* brightness */
 static const char *brupcmd[] = { "brightnessctl", "set", "5%+", NULL };
 static const char *brdowncmd[] = { "brightnessctl", "set", "5%-", NULL };
+
+/* volume */
 static const char *volupcmd[] = { "/bin/sh", "-c", "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+ && kill -39 $(pidof dwmblocks)", NULL };
 static const char *voldowncmd[] = { "/bin/sh", "-c", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && kill -39 $(pidof dwmblocks)", NULL };
 static const char *volmutecmd[] = { "/bin/sh", "-c", "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && kill -39 $(pidof dwmblocks)", NULL };
+
+/* media keys */
+static const char *medplaypausecmd[] = { "playerctl", "play-pause", NULL };
+static const char *mednextcmd[] = { "playerctl", "next", NULL };
+static const char *medprevcmd[] = { "playerctl", "previous", NULL };
+
+/* screenshots */
 static const char *scshotcmd[] = { "screenshot.sh", NULL };
 static const char *scshotselcmd[] = { "screenshot_selection.sh", NULL };
 
@@ -101,9 +112,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	//{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
-	//{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
-	//{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -113,14 +121,17 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quitprompt,    {0} },
-	{ 0, XF86XK_MonBrightnessUp,   	spawn,     {.v = brupcmd} },
-    { 0, XF86XK_MonBrightnessDown, 	spawn,     {.v = brdowncmd} },
-    { 0, XF86XK_AudioRaiseVolume, 	spawn, 	   {.v = volupcmd} } ,
-    { 0, XF86XK_AudioLowerVolume, 	spawn, 	   {.v = voldowncmd} },
-    { 0, XF86XK_AudioMute, 			spawn, 	   {.v = volmutecmd} },
-	{ MODKEY, XK_Print,				spawn,	   {.v = scshotcmd} },
-	{ MODKEY|ShiftMask, XK_Print,	spawn,	   {.v = scshotselcmd} }
+	{ MODKEY|ShiftMask,             XK_q,      					quitprompt,    {0} },
+	{ 0, 							XF86XK_MonBrightnessUp,   	spawn,     {.v = brupcmd} },
+    { 0, 							XF86XK_MonBrightnessDown, 	spawn,     {.v = brdowncmd} },
+    { 0, 							XF86XK_AudioRaiseVolume, 	spawn, 	   {.v = volupcmd} } ,
+    { 0, 							XF86XK_AudioLowerVolume, 	spawn, 	   {.v = voldowncmd} },
+    { 0, 							XF86XK_AudioMute, 			spawn, 	   {.v = volmutecmd} },
+	{ MODKEY, 						XK_Print,					spawn,	   {.v = scshotcmd} },
+	{ MODKEY|ShiftMask, 			XK_Print,					spawn,	   {.v = scshotselcmd} },
+	{ 0, 							XF86XK_AudioPlay, 			spawn, 	   {.v = medplaypausecmd } },
+	{ 0, 							XF86XK_AudioNext, 			spawn, 	   {.v = mednextcmd } },
+	{ 0, 							XF86XK_AudioPrev, 			spawn, 	   {.v = medprevcmd } }
 };
 
 /* button definitions */
@@ -137,5 +148,5 @@ static const Button buttons[] = {
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
-	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} }
 };
