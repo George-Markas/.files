@@ -1,0 +1,94 @@
+configuration {
+	display-drun: " ";
+	display-window: "Windows:";
+	drun-display-format: "{name}";
+	font: "CommitMono Nerd Font 15";
+	modi: "window,run,drun";
+}
+
+
+@theme "/dev/null"
+
+
+* {
+	background: #232323;
+	frame: #898b8a;
+	selected: #353535;
+
+	foreground: #9fa1a2;
+	foreground-alt: #6e7071;
+
+	border: 2;
+	margin: 0;
+	padding: 0;
+	spacing: 0;
+}
+
+
+window {
+	width: 27%;
+	border-color: @frame;
+	background-color: @background;
+	height: 390px;
+}
+
+
+element {
+	padding: 8 12;
+	background-color: transparent;
+	text-color: @foreground-alt;
+}
+
+
+element selected {
+	text-color: @foreground;
+	background-color: @selected;
+}
+
+
+element-text {
+	background-color: transparent;
+	text-color: inherit;
+	vertical-align: 0.5;
+}
+
+
+element-icon {
+ 	size: 14;
+	padding: 0 10 0 0;
+ 	background-color: transparent;
+}
+
+
+entry {
+	padding: 12;
+	background-color: @background;
+	text-color: @foreground;
+}
+
+
+inputbar {
+	children: [prompt, entry];
+	background-color: @background;
+}
+
+
+listview {
+	background-color: @background;
+	columns: 1;
+	lines: 10;
+}
+
+
+mainbox {
+	children: [inputbar, listview];
+	background-color: @background;
+}
+
+
+prompt {
+	enabled: true;
+	padding: 12 0 0 12;
+	background-color: @background;
+	text-color: @foreground;
+}

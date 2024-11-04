@@ -10,5 +10,11 @@ picom &
 # status
 dwmblocks &
 
+# notifications
+dunst &
+
+# clipboard daemon
+clipcatd &
+
 # window manager
 exec dwm

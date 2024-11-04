@@ -62,10 +62,11 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-/* commands */
+/* terminal & launcher */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run_desktop", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
+static const char *roficmd[] = { "rofi", "-show", "drun", "NULL" };
 
 /* brightness */
 static const char *brupcmd[] = { "brightnessctl", "set", "5%+", NULL };
@@ -82,13 +83,16 @@ static const char *mednextcmd[] = { "playerctl", "next", NULL };
 static const char *medprevcmd[] = { "playerctl", "previous", NULL };
 
 /* screenshots */
-static const char *scshotcmd[] = { "screenshot.sh", NULL };
-static const char *scshotselcmd[] = { "screenshot_selection.sh", NULL };
+static const char *scrnshotcmd[] = { "screenshot.sh", NULL };
+static const char *scrnshotselcmd[] = { "screenshot_selection.sh", NULL };
+
+/* clipboard history */
+static const char *clipcatcmd[] = { "clipcat-menu", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,		                XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd} },
+	{ MODKEY,		                XK_Return, spawn,          {.v = termcmd} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_Right,  focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Left,   focusstack,     {.i = -1 } },
@@ -127,11 +131,12 @@ static const Key keys[] = {
     { 0, 							XF86XK_AudioRaiseVolume, 	spawn, 	   {.v = volupcmd} } ,
     { 0, 							XF86XK_AudioLowerVolume, 	spawn, 	   {.v = voldowncmd} },
     { 0, 							XF86XK_AudioMute, 			spawn, 	   {.v = volmutecmd} },
-	{ MODKEY, 						XK_Print,					spawn,	   {.v = scshotcmd} },
-	{ MODKEY|ShiftMask, 			XK_Print,					spawn,	   {.v = scshotselcmd} },
+	{ 0,                            XK_Print,					spawn,	   {.v = scrnshotcmd} },
+	{ MODKEY|ShiftMask, 			XK_s,   					spawn,	   {.v = scrnshotselcmd} },
 	{ 0, 							XF86XK_AudioPlay, 			spawn, 	   {.v = medplaypausecmd } },
-	{ 0, 							XF86XK_AudioNext, 			spawn, 	   {.v = mednextcmd } },
-	{ 0, 							XF86XK_AudioPrev, 			spawn, 	   {.v = medprevcmd } }
+	{ 0, 							XF86XK_AudioNext, 			spawn, 	   {.v = mednextcmd} },
+	{ 0, 							XF86XK_AudioPrev, 			spawn, 	   {.v = medprevcmd} },
+	{ MODKEY,						XK_v,						spawn,	   {.v = clipcatcmd} }
 };
 
 /* button definitions */
