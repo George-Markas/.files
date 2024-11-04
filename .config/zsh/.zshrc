@@ -5,7 +5,7 @@ SAVEHIST=1000
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
-PROMPT='[%n@%m %~]$ '
+PROMPT="%F{203}[%f%F{222}%n%f%F{157}@%f%F{153}%m%f %F{175}%~%f%F{203}]%f%F{251}$%f "
 alias ls='ls -a --color=auto'
 alias grep='grep --color=auto'
 

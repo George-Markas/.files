@@ -7,4 +7,5 @@ export VIDEO_PLAYER="mpv"
 export AUDIO_PLAYER=$VIDEO_PLAYER
 
 # path
-export PATH=~/.config/scripts/:$PATH
+export PATH=~/.config/scripts/:/opt/idea-IU-242.23726.103/bin:$PATH
+
